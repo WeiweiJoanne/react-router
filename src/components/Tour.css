@@ -1,0 +1,43 @@
+.item{
+  max-width: 70%;
+  margin: 0 auto;
+}
+img{
+  width: 60%;
+}
+#goBack{
+  margin: 10px 0;
+  text-align: left;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.App-logo g {
+  fill: #DB7290;
+}
+
+.App-logo path {
+  stroke: #DB7290;
+  ;
+  stroke-width: 10px;
+  fill: #FFD0DD;
+  stroke-dasharray: 35px 15px;
+  animation: orbit 1s infinite linear;
+}
+
+@keyframes orbit {
+  to {
+    stroke-dashoffset: 50px;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

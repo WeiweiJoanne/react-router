@@ -1,38 +1,48 @@
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
+
+import TourList from './components/TourList'
+import TourDisc from './components/TourDisc'
 import { Routes, Route, Link, Outlet } from 'react-router-dom'
 
-function Home() {
+const Tour = () =>{
+  return (
+      <Outlet />
+  )
+}
+
+const Home = ()=> {
   return <h1>Home</h1>
 }
 
-function FAQ() {
+const FAQ = ()=> {
   return <h1>FAQ</h1>
 }
-function Layout() {
+const Layout = ()=> {
   return (
-    <>
-      <nav>
+    < >
+      <nav className='App-header' >
         <ul>
-          <li>
+          <li className='App-link'>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className='App-link'>
             <Link to="/FAQ">FAQ</Link>
           </li>
-          <li>
+          <li className='App-link'>
             <Link to="/tour">Tour</Link>
           </li>
         </ul>
       </nav>
-      <div>
-        <Outlet />
+      <div className="content">
+        <Outlet  />
       </div>
+      <footer>HexSchool React 線上讀書會作業</footer>
     </>
   )
 }
 
-function App() {
+const App=()=> {
   return (
     <div className="App">
       <Routes>
@@ -41,10 +51,8 @@ function App() {
           <Route path="/FAQ" element={<FAQ />}></Route>
           <Route path="/tour" element={<Tour />}>
             <Route index element={<TourList />} />
-            <Route path="Id" element={<TourDisc />} />
+            <Route path=":Id" element={<TourDisc />} />
           </Route>
-
-
         </Route>
       </Routes>
     </div>
