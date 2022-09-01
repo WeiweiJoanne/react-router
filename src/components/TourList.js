@@ -1,5 +1,4 @@
 
-import logo from '../logo.svg';
 import './Tour.css';
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
@@ -20,7 +19,7 @@ const TourList = () => {
 
   const toRender = () => {
     if (isLoading) {
-      return <img src={logo} className="App-logo" alt="logo" />
+      return <h3>資料處理中，請稍候</h3>
     } else {
       const res = data.map((item, i) => <li key={i}> <Link to={item.Id}>{item.Name}</Link> </li>);
       return <ul>{res}</ul>
